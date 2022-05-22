@@ -1,0 +1,4 @@
+E:\Trabajos\CementeryCry\CementeryCry\CementeryCry\x64\Debug\CementeryCry.vcxproj.AssemblyReference.cache
+E:\Trabajos\CementeryCry\CementeryCry\CementeryCry\x64\Debug\CementeryCry.vcxproj.SuggestedBindingRedirects.cache
+E:\Trabajos\CementeryCry\CementeryCry\CementeryCry\x64\Debug\CementeryCry.vcxproj.GenerateResource.cache
+E:\Trabajos\CementeryCry\CementeryCry\CementeryCry\x64\Debug\CementeryCry.CC.resources
