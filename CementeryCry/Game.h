@@ -56,4 +56,8 @@ public:
 		obstacles->Show(g);
 	}
 
+	Player* GetPlayer() {
+		return this->player;
+	}
+
 };
