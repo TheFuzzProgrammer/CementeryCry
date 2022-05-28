@@ -1,1 +1,3 @@
-﻿  CementeryCry.vcxproj -> E:\Trabajos\CementeryCry\CementeryCry\x64\Debug\CementeryCry.exe
+﻿  CC.cpp
+  CC.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  CementeryCry.vcxproj -> E:\Trabajos\CementeryCry\CementeryCry\x64\Debug\CementeryCry.exe

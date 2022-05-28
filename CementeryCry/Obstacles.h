@@ -17,9 +17,17 @@ private:
 	vector<Obstacle*> obstacles;
 public:
 
-	Obstacles(int n) {
+	Obstacles(int n, Rectangle r) {
+
 		for (int i = 0; i <= n; i++) {
-			obstacles.push_back(new Obstacle);
+			Obstacle* o = new Obstacle();
+			if (!o->GetArea().IntersectsWith(r) && !Hits(o->GetArea())){
+				obstacles.push_back(new Obstacle);
+			}
+			else {
+				delete o;
+				i -= 1;
+			}
 		}
 	}
 
@@ -39,6 +47,16 @@ public:
 		for (Obstacle* o : obstacles) {
 			o->Show(g);
 		}
+	}
+
+	bool Hits(Rectangle r) {
+		for each (Obstacle * o in obstacles) {
+			if (o->GetNextArea().IntersectsWith(r)) {
+				return true;
+			}
+		
+		}
+		return false;
 	}
 
 };

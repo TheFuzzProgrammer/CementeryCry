@@ -49,6 +49,7 @@ namespace CementeryCry {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(CC::typeid));
 			this->soul = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
@@ -73,6 +74,7 @@ namespace CementeryCry {
 			// 
 			// panel2
 			// 
+			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
 			this->panel2->Controls->Add(this->label1);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel2->Location = System::Drawing::Point(0, 0);
@@ -83,6 +85,7 @@ namespace CementeryCry {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Roboto", 18, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(479, 23);
@@ -118,10 +121,10 @@ namespace CementeryCry {
 		this->label1->Text = game->GetPlayer()->GetArea().X.ToString() + ";" + game->GetPlayer()->GetArea().Y.ToString();
 	}
 	Void CC_KeyDown(Object^ sender, KeyEventArgs^ e) {
-		game->PlayerMovement(true, e->KeyCode, 5);
+		game->PlayerMovement(true, e->KeyCode, 10);
 	}
 	Void CC_KeyUp(Object^ sender, KeyEventArgs^ e) {
-		game->PlayerMovement(false, e->KeyCode, 5);
+		game->PlayerMovement(false, e->KeyCode, 10);
 	}
 	};
 }

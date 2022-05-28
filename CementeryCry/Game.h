@@ -9,7 +9,7 @@ private:
 public:
 	Game(int n) {
 		player = new Player();
-		obstacles = new Obstacles(n);
+		obstacles = new Obstacles(n, player->GetArea());
 	}
 	~Game() {
 		delete player, obstacles;
@@ -48,8 +48,10 @@ public:
 	}
 
 	void Move(Graphics^ g) {
-		player->Move(g);
-		obstacles->Move(g);
+		if (!obstacles->Hits(player->GetNextArea())) {
+			player->Move(g);
+			obstacles->Move(g);
+		}
 	}
 	void Show(Graphics^ g) {
 		player->Show(g);
